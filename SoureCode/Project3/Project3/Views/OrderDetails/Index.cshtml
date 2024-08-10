@@ -1,0 +1,60 @@
+﻿@model IEnumerable<Project3.Models.OrderDetail>
+@using Microsoft.AspNetCore.Http
+@inject Microsoft.AspNetCore.Http.IHttpContextAccessor HttpContextAccessor
+
+@{
+    ViewData["Title"] = "OrderDetail";
+}
+
+<div class="hero-wrap hero-bread" style="background-image: url('/StyleUser/images/cart1.jpg');">
+    <div class="container">
+        <div class="row no-gutters slider-text align-items-center justify-content-center">
+            <div class="col-md-9 ftco-animate text-center">
+                <p class="breadcrumbs"><span class="mr-2"><a href="#">Home</a></span> <span>Orders</span></p>
+                <h1 class="mb-0 bread">My Order Detail</h1>
+            </div>
+        </div>
+    </div>
+</div>
+<section class="ftco-section ftco-cart">
+    <div class="container">
+        <h3 class="mb-4 billing-heading">Order Details</h3>
+        <div class="col-md-12 ftco-animate">
+            <div class="cart-list">
+                <table class="table">
+                    <thead class="thead-primary">
+                        <tr class="text-center">
+                            <th>&nbsp;</th>
+                            <th>Product name</th>
+                            <th>Price</th>
+                            <th>Quantity</th>
+                            <th>Total</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @foreach (var item in Model)
+                        {
+                            @if (HttpContextAccessor.HttpContext.Session.GetInt32("LoginId") == item.Orders.AccountId)
+                            {
+                                <tr class="text-center">
+                                    <td class="image-prod"><div class="img" style="background-image:url('/Images/@Html.DisplayFor(modelItem => item.Product.ProductImage)');"></div></td>
+                                    <td class="product-name">
+                                        <h3>@Html.DisplayFor(modelItem => item.Product.ProductName)</h3>
+
+                                    </td>
+                                    <td class="price">@Html.DisplayFor(modelItem => item.Product.Price)</td>
+                                    <td class="quantity">@Html.DisplayFor(modelItem => item.Quantity)</td>
+                                    <td class="total">@Html.DisplayFor(modelItem => item.TotalPrice)</td>
+                                </tr>
+                                <!-- END TR-->
+                            }
+                        }
+                    </tbody>
+                </table>
+            </div>
+        </div>
+        <br />
+        <p><a asp-action="Index" asp-controller="Order" class="btn btn-primary py-3 px-4">Back</a></p>
+    </div>
+
+</section>

@@ -1,0 +1,38 @@
+﻿@model Project3.Models.Category
+
+@{
+    ViewData["Title"] = "Category Details Page";
+}
+
+<div>
+    <div class="row mb-2">
+        <div class="col-sm-6">
+            <h1 class="m-0">Category Details</h1>
+        </div>
+        <div class="col-sm-6">
+            <ol class="breadcrumb float-sm-right">
+                <li class="breadcrumb-item"><a asp-area="Admin" asp-controller="HomeAdmin" asp-action="Index">Home Admin</a></li>
+                <li class="breadcrumb-item"><a asp-area="Admin" asp-controller="CategoriesAdmin" asp-action="Index">Category management</a></li>
+                <li class="breadcrumb-item active">Category Details</li>
+            </ol>
+        </div>
+    </div>
+    <hr />
+    <dl class="row">
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.CategoryName)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.CategoryName)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.CategoryType)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.CategoryType)
+        </dd>
+    </dl>
+</div>
+<div>
+    <a asp-action="Edit" asp-route-id="@Model?.CategoryId">Edit</a>
+</div>

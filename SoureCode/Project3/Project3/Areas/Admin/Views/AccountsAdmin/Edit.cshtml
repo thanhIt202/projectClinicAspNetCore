@@ -1,0 +1,61 @@
+﻿@model Project3.Models.Account
+
+@{
+    ViewData["Title"] = "Account Edit Page";
+}
+
+<div class="row mb-2">
+    <div class="col-sm-6">
+        <h1 class="m-0">Account Edit</h1>
+    </div>
+    <div class="col-sm-6">
+        <ol class="breadcrumb float-sm-right">
+            <li class="breadcrumb-item"><a asp-area="Admin" asp-controller="HomeAdmin" asp-action="Index">Home Admin</a></li>
+            <li class="breadcrumb-item"><a asp-area="Admin" asp-controller="AccountsAdmin" asp-action="Index">Account management</a></li>
+            <li class="breadcrumb-item active">Account Edit</li>
+        </ol>
+    </div>
+</div>
+<hr />
+<form asp-action="Edit">
+    <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+    <input type="hidden" asp-for="AccountId" />
+    <div class="form-group">
+        <label asp-for="FullName" class="control-label"></label>
+        <input asp-for="FullName" class="form-control" readonly />
+    </div>
+    <div class="form-group">
+        <label asp-for="Email" class="control-label"></label>
+        <input asp-for="Email" type="email" class="form-control" readonly />
+    </div>
+    <input type="hidden" asp-for="Password" />
+    <div class="form-group">
+        <label asp-for="Phone" class="control-label"></label>
+        <input asp-for="Phone" type="number" class="form-control" readonly />
+    </div>
+    <div class="form-group">
+        <label asp-for="Address" class="control-label"></label>
+        <input asp-for="Address" class="form-control" readonly />
+    </div>
+    <div class="form-group">
+        <input asp-for="Avatar" class="form-control" type="hidden" />
+        <img src="~/Images/@Model.Avatar" width="20%" height="100" />
+    </div>
+    <div class="form-group">
+        <label asp-for="AccountStatus" class="control-label"></label>
+        <select asp-for="AccountStatus" class="form-control">
+            <option value="In force">In force</option>
+            <option value="Disable">Disable</option>
+        </select>
+    </div>
+    <input type="hidden" asp-for="AccountType" />
+    <div class="form-group">
+        <input type="submit" value="Save" class="btn btn-primary" />
+    </div>
+</form>
+
+@section Scripts {
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
+}

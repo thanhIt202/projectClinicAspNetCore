@@ -1,0 +1,60 @@
+﻿@model Project3.Models.Account
+
+@{
+    ViewData["Title"] = "Account information";
+}
+
+
+<div class="container">
+    <h1 style="text-align:center">Account information</h1>
+    <h5>
+        <b class="text-success">@TempData["Message"]</b>
+    </h5>
+    <form asp-action="Account" enctype="multipart/form-data">
+        <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+        <input type="hidden" asp-for="AccountId" />
+        <input type="hidden" asp-for="Password" />
+        <input type="hidden" asp-for="AccountStatus" />
+        <input type="hidden" asp-for="AccountType" />
+
+        <div class="row my-5">
+            <div class="col-4">
+                <input name="Image" class="form-control mb-2" type="hidden" value="@Model.Avatar" />
+                <img src="~/Images/@Model.Avatar" width="100%" alt="#">
+                @if (Model.AccountType == "user")
+                {
+                    <input asp-for="Avatar" type="file" class="form-control mb-2" />
+                }
+                <input asp-for="Avatar" type="hidden" class="form-control mb-2" />
+            </div>
+            <div class="col-8">
+                <div class="row my-5">
+                    <b class="col-md-2 mt-3">Email :</b>
+                    <input asp-for="Email" class="form-control col-md-10" readonly />
+                </div>
+                <div class="row my-5">
+                    <b class="col-md-2 mt-3">Full Name :</b>
+                    <input asp-for="FullName" class="form-control col-md-10" />
+                    <span asp-validation-for="FullName" class="text-danger"></span>
+                </div>
+                <div class="row my-5">
+                    <b class="col-md-2 mt-3">Phone :</b>
+                    <input asp-for="Phone" type="number" class="form-control col-md-10" />
+                    <span asp-validation-for="Phone" class="text-danger"></span>
+                </div>
+                <div class="row my-5">
+                    <b class="col-md-2 mt-3">Address :</b>
+                    <input asp-for="Address" class="form-control col-md-10" />
+                    <span asp-validation-for="Address" class="text-danger"></span>
+                </div>
+
+                <div class="form-group" style="text-align:center">
+                    @if(Model.AccountType == "user"){
+                        <input type="submit" value="Save" class="btn btn-success p-2 my-5" />
+                    }
+                    <a class="btn btn-danger p-2 my-5" asp-action="Logout">Logout</a>
+                </div>
+            </div>
+        </div>
+    </form>
+</div>

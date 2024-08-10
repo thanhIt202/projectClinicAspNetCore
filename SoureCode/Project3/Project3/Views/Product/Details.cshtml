@@ -1,0 +1,145 @@
+﻿@model Project3.ViewModels.Cart_Pro
+@using Microsoft.AspNetCore.Http
+@inject Microsoft.AspNetCore.Http.IHttpContextAccessor HttpContextAccessor
+
+@{
+    ViewData["Title"] = "Product Details";
+}
+
+<div class="hero-wrap hero-bread" style="background-image: url('/StyleUser/images/pro1.jpg');">
+    <div class="container">
+        <div class="row no-gutters slider-text align-items-center justify-content-center">
+            <div class="col-md-9 ftco-animate text-center">
+                <p class="breadcrumbs"><span class="mr-2"><a href="index.html">Home</a></span> <span class="mr-2"><a href="index.html">Product</a></span> <span>Product Single</span></p>
+                <h1 class="mb-0 bread">Product Single</h1>
+            </div>
+        </div>
+    </div>
+</div>
+<form asp-action="Create" asp-controller="Cart">
+    <section class="ftco-section">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-6 mb-5 ftco-animate">
+                    <a href="~/Images/@Html.DisplayFor(model => model.MPro.ProductImage)" class="image-popup"><img src="~/Images/@Html.DisplayFor(model => model.MPro.ProductImage)" class="img-fluid" alt="Colorlib Template"></a>
+                </div>
+                <div class="col-lg-6 product-details pl-md-5 ftco-animate">
+                    <h4>@Html.DisplayFor(model => model.MPro.ProductName)</h4>
+                    <div class="rating">
+                        <p class="text-left mr-4" style="color: #000;">Type :<span style="color: #bbb;"> @Html.DisplayFor(model => model.MPro.Category.CategoryType)</span></p>
+
+                        <p class="text-left mr-4" style="color: #000;">Category :<span style="color: #bbb;"> @Html.DisplayFor(model => model.MPro.Category.CategoryName)</span></p>
+
+                    </div>
+                    <p class="price"><span>@Html.DisplayFor(model => model.MPro.Price)</span></p>
+                    <pre>@Html.DisplayFor(model => model.MPro.Description)</pre>
+                    <div class="row mt-4">
+                        <div class="w-100"></div>
+                        <div class="input-group col-md-6 d-flex mb-3">
+                            <span class="input-group-btn mr-2">
+                                <button type="button" class="quantity-left-minus btn" data-type="minus" data-field="">
+                                    <i class="ion-ios-remove"></i>
+                                </button>
+                            </span>
+                            <input type="text" id="quantity" name="quantity" class="form-control input-number" value="1" min="1" max="100">
+                            <span class="input-group-btn ml-2">
+                                <button type="button" class="quantity-right-plus btn" data-type="plus" data-field="">
+                                    <i class="ion-ios-add"></i>
+                                </button>
+                            </span>
+                        </div>
+                        <div class="w-100"></div>
+                        <div class="col-md-12">
+                            <input type="hidden" name="TotalPrice" value='@ViewData["price"]' />
+                            <input type="hidden" name="ProductId" value='@ViewData["pro_id"]' />
+                            <input type="hidden" name="AccountId" value='@HttpContextAccessor.HttpContext.Session.GetInt32("LoginId")' />
+                            @* <p style="color: #000;">600 kg available</p> *@
+                        </div>
+                    </div>
+                    @if (Model.MPro.ProductStatus == "In stock")
+                    {
+                        <p><input type="submit" value="Add to Cart" class="btn btn-black py-3 px-5" /></p>
+                    }
+                    else
+                    {
+                        <p class="btn btn-red py-3 px-5 font-weight-bold" style="background-color:red">Out Of Stock</p>
+                    }
+                </div>
+            </div>
+        </div>
+    </section>
+</form>
+<section class="ftco-section">
+    <div class="container">
+        <div class="row justify-content-center mb-3 pb-3">
+            <div class="col-md-12 heading-section text-center ftco-animate">
+                <span class="subheading">Products</span>
+                <h2 class="mb-4">Related Products</h2>
+                @* <p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia</p> *@
+            </div>
+        </div>
+    </div>
+    <div class="container">
+        <div class="row">
+            @{
+                var galList = ViewData["pro"] as List<Product>;
+            }
+            @foreach (var item in galList)
+            {
+                <div class="col-md-6 col-lg-3 ftco-animate">
+                    <div class="product">
+                        <a href="#" class="img-prod">
+                            <img class="img-fluid" src="~/Images/@item.ProductImage" alt="Colorlib Template" style="overflow:hidden !important ; height : 300px !important">
+                            <div class="overlay"></div>
+                        </a>
+                        <div class="text py-3 pb-4 px-3 text-center">
+                            <h3><a href="#">@Html.DisplayFor(modelItem => item.ProductName)</a></h3>
+                            <div class="d-flex">
+                                <div class="pricing">
+                                    <p class="price"><span>@Html.DisplayFor(modelItem => item.Price)</span></p>
+                                </div>
+                            </div>
+                            <div class="bottom-area d-flex px-3">
+                                <div class="m-auto d-flex">
+                                    <a asp-action="Details" asp-route-id="@item.ProductId" class="add-to-cart d-flex justify-content-center align-items-center text-center">
+                                        <span><i class="ion-ios-menu"></i></span>
+                                    </a>
+                                    @if (item.ProductStatus == "In stock")
+                                    {
+                                        <a asp-action="Details" asp-route-id="@item.ProductId" class="buy-now d-flex justify-content-center align-items-center ml-2">
+                                            <span><i class="ion-ios-cart"></i></span>
+                                        </a>
+                                    }
+                                    else
+                                    {
+                                        <a class="buy-now d-flex justify-content-center align-items-center ml-2 " style=" background-color:red">
+                                            <span><i class="ion-ios-cart"></i></span>
+                                        </a>
+                                    }
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            }
+        </div>
+    </div>
+</section>
+<section class="ftco-section ftco-no-pt ftco-no-pb py-5 bg-light">
+    <div class="container py-4">
+        <div class="row d-flex justify-content-center py-5">
+            <div class="col-md-6">
+                <h2 style="font-size: 22px;" class="mb-0">Subcribe to our Newsletter</h2>
+                <span>Get e-mail updates about our latest shops and special offers</span>
+            </div>
+            <div class="col-md-6 d-flex align-items-center">
+                <form action="#" class="subscribe-form">
+                    <div class="form-group d-flex">
+                        <input type="text" class="form-control" placeholder="Enter email address">
+                        <input type="submit" value="Subscribe" class="submit px-3">
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</section>

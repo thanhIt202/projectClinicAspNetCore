@@ -1,0 +1,247 @@
+﻿@{
+    ViewData["Title"] = "Home Page";
+}
+
+<section id="home-section" class="hero">
+    <div class="home-slider owl-carousel">
+        <div class="slider-item" style="background-image: url(StyleUser/images/bg2.jpg);">
+            <div class="overlay"></div>
+            <div class="container">
+                <div class="row slider-text justify-content-center align-items-center" data-scrollax-parent="true">
+                    <div class="col-md-12 ftco-animate text-center">
+                        <h2 style="color: white">"Professional - Friendly - Modern team"</h2>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="slider-item" style="background-image: url(StyleUser/images/bg3.jpg);">
+            <div class="overlay"></div>
+            <div class="container">
+                <div class="row slider-text justify-content-center align-items-center" data-scrollax-parent="true">
+                    <div class="col-sm-12 ftco-animate text-center">
+                        <h2 style="color: white">Equipment - Modern facilities.</h2>
+                        <br />
+                        <h2 style="color: white">Meet patient needs.</h2>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<section class="ftco-section">
+    <div class="container">
+        <div class="row no-gutters ftco-services">
+            <div class="col-md-3 text-center d-flex align-self-stretch ftco-animate">
+                <div class="media block-6 services mb-md-0 mb-4">
+                    <div class="icon bg-color-1 active d-flex justify-content-center align-items-center mb-2">
+                        <span class="fa-brands fa-old-republic"></span>
+                    </div>
+                    <div class="media-body">
+                        <h3 class="heading">Science</h3>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-3 text-center d-flex align-self-stretch ftco-animate">
+                <div class="media block-6 services mb-md-0 mb-4">
+                    <div class="icon bg-color-2 d-flex justify-content-center align-items-center mb-2">
+                        <span class="fa-brands fa-gratipay"></span>
+                    </div>
+                    <div class="media-body">
+                        <h3 class="heading">Medical</h3>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-3 text-center d-flex align-self-stretch ftco-animate">
+                <div class="media block-6 services mb-md-0 mb-4">
+                    <div class="icon bg-color-3 d-flex justify-content-center align-items-center mb-2">
+                        <span class="flaticon-award"></span>
+                    </div>
+                    <div class="media-body">
+                        <h3 class="heading">Education</h3>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-3 text-center d-flex align-self-stretch ftco-animate">
+                <div class="media block-6 services mb-md-0 mb-4">
+                    <div class="icon bg-color-4 d-flex justify-content-center align-items-center mb-2">
+                        <span class="fa-solid fa-chart-line"></span>
+                    </div>
+                    <div class="media-body">
+                        <h3 class="heading">Business</h3>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<section class="ftco-section ftco-category ftco-no-pt">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-8">
+                <div class="row">
+                    <div class="col-md-6 order-md-last align-items-stretch d-flex">
+                        <div class="category-wrap-2 ftco-animate img align-self-stretch d-flex" style="background-image: url(StyleUser/images/category.jpg);">
+                            <div class="text text-center">
+                                <h2>PROVIDENCE</h2>
+                                <p>See the latest information now</p>
+                                <p><a asp-controller="Blog" asp-action="Index" class="btn btn-primary">Watch now</a></p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="category-wrap ftco-animate img mb-4 d-flex align-items-end" style="background-image: url(StyleUser/images/a1.jpg);">
+                            <div class="text px-3 py-1">
+                                <h2 class="mb-0"><a href="#">Science</a></h2>
+                            </div>
+                        </div>
+                        <div class="category-wrap ftco-animate img d-flex align-items-end" style="background-image: url(StyleUser/images/a2.jpg);">
+                            <div class="text px-3 py-1">
+                                <h2 class="mb-0"><a href="#">Medical</a></h2>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="category-wrap ftco-animate img mb-4 d-flex align-items-end" style="background-image: url(StyleUser/images/a3.jpg);">
+                    <div class="text px-3 py-1">
+                        <h2 class="mb-0"><a href="#">Education</a></h2>
+                    </div>
+                </div>
+                <div class="category-wrap ftco-animate img d-flex align-items-end" style="background-image: url(StyleUser/images/a4.jpg);">
+                    <div class="text px-3 py-1">
+                        <h2 class="mb-0"><a href="#">Business</a></h2>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<section class="ftco-section img" style="background-image: url(StyleUser/images/h1.jpg);">
+    <div class="container">
+        <div class="row justify-content-end">
+            <div class="col-md-6 heading-section ftco-animate deal-of-the-day ftco-animate">
+                <span class="subheading">
+                    PROVIDENCE
+                </span>
+                <h2 class="mb-4">Deal of the day</h2>
+                <p>Buy discounted products now</p>
+                <h3><a href="#">MEDSURFACE MED SURFACE</a></h3>
+                <span class="price">$10 <a href="#">now $8 only</a></span>
+                <div id="timer" class="d-flex mt-5">
+                    <div class="time" id="days"></div>
+                    <div class="time pl-3" id="hours"></div>
+                    <div class="time pl-3" id="minutes"></div>
+                    <div class="time pl-3" id="seconds"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- bs-->
+<section class="ftco-section testimony-section">
+    <div class="container">
+        <div class="row ftco-animate">
+            <div class="col-md-12">
+                <div class="carousel-testimony owl-carousel">
+                    <div class="item">
+                        <div class="testimony-wrap p-4 pb-5">
+                            <div class="user-img mb-5" style="background-image: url(StyleUser/images/bs1.jpg)">
+                                <span class="quote d-flex align-items-center justify-content-center">
+                                    <i class="icon-quote-left"></i>
+                                </span>
+                            </div>
+                            <div class="text text-center">
+                                <p class="mb-5 pl-4 line">Professor Alain Carpentier is, perhaps, the world’s most renowned cardiologist, whom the President of the American Association for Thoracic Surgery calls the father of modern mitral valve repair.</p>
+                                <p class="name">Professor Alain Carpentier</p>
+                                <span class="position">Cardiologist</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="item">
+                        <div class="testimony-wrap p-4 pb-5">
+                            <div class="user-img mb-5" style="background-image: url(StyleUser/images/bs2.jpg)">
+                                <span class="quote d-flex align-items-center justify-content-center">
+                                    <i class="icon-quote-left"></i>
+                                </span>
+                            </div>
+                            <div class="text text-center">
+                                <p class="mb-5 pl-4 line">He is a Professor of Medicine, Pediatrics and Biomedicine and Distinguished Educator at Pennsylvania State University (PSU), Immunology and Respiratory Clinical Research</p>
+                                <p class="name">Professor Timothy Craig</p>
+                                <span class="position">Allergy - Immunity</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="item">
+                        <div class="testimony-wrap p-4 pb-5">
+                            <div class="user-img mb-5" style="background-image: url(StyleUser/images/bs3.jpg)">
+                                <span class="quote d-flex align-items-center justify-content-center">
+                                    <i class="icon-quote-left"></i>
+                                </span>
+                            </div>
+                            <div class="text text-center">
+                                <p class="mb-5 pl-4 line">Professor Alain Carpentier is, perhaps, the world’s most renowned cardiologist, whom the President of the American Association for Thoracic Surgery calls the father of modern mitral valve repair.</p>
+                                <p class="name">Professor Philippe Macaire</p>
+                                <span class="position">Anesthetist</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="item">
+                        <div class="testimony-wrap p-4 pb-5">
+                            <div class="user-img mb-5" style="background-image: url(StyleUser/images/bs4.jpg)">
+                                <span class="quote d-flex align-items-center justify-content-center">
+                                    <i class="icon-quote-left"></i>
+                                </span>
+                            </div>
+                            <div class="text text-center">
+                                <p class="mb-5 pl-4 line">Throughout his career, he has contributed and participated in nearly 50 scientific research projects with many practical applications, achieving international reports published in the field of Hematology.</p>
+                                <p class="name">Associate Professor Yi Hyeon Gyu</p>
+                                <span class="position">Hematologist</span>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<hr>
+<!-- thuong hiệu -->
+<section class="ftco-section ftco-partner">
+    <div class="container">
+        <div class="row">
+            <div class="col-sm ftco-animate">
+                <a href="#" class="partner"><img src="StyleUser/images/th1.jpg" class="img-fluid" alt="Colorlib Template"></a>
+            </div>
+
+            <div class="col-sm ftco-animate">
+                <a href="#" class="partner"><img src="StyleUser/images/th2.jpg" class="img-fluid" alt="Colorlib Template"></a>
+            </div>
+            <div class="col-sm ftco-animate">
+                <a href="#" class="partner"><img src="StyleUser/images/th3.jpg" class="img-fluid" alt="Colorlib Template"></a>
+            </div>
+            <div class="col-sm ftco-animate">
+                <a href="#" class="partner"><img src="StyleUser/images/th4.jpg" class="img-fluid" alt="Colorlib Template"></a>
+            </div>
+        </div>
+    </div>
+</section>
+<section class="ftco-section ftco-no-pt ftco-no-pb py-5 bg-light">
+    <div class="container py-4">
+        <div class="row d-flex justify-content-center py-5">
+            <div class="col-md-6">
+                <h2 style="font-size: 22px;" class="mb-0">Subcribe to our Newsletter</h2>
+                <span>Receive email updates about our latest information and special offers.</span>
+            </div>
+            <div class="col-md-6 d-flex align-items-center">
+                <form action="#" class="subscribe-form">
+                    <div class="form-group d-flex">
+                        <input type="text" class="form-control" placeholder="Enter email address">
+                        <input type="submit" value="Subscribe" class="submit px-3">
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</section>

@@ -1,0 +1,125 @@
+﻿@model Project3.Models.Orders
+@using Microsoft.AspNetCore.Http
+@inject Microsoft.AspNetCore.Http.IHttpContextAccessor HttpContextAccessor
+@{
+    ViewData["Title"] = "Create";
+    Layout = "~/Views/Shared/_LayoutUser.cshtml";
+}
+
+
+<div class="hero-wrap hero-bread" style="background-image: url('/StyleUser/images//bg_1.jpg');">
+    <div class="container">
+        <div class="row no-gutters slider-text align-items-center justify-content-center">
+            <div class="col-md-9 ftco-animate text-center">
+                <p class="breadcrumbs"><span class="mr-2"><a href="index.html">Home</a></span> <span>Checkout</span></p>
+                <h1 class="mb-0 bread">Checkout</h1>
+            </div>
+        </div>
+    </div>
+</div>
+
+<section class="ftco-section">
+    <div class="container">
+        <div class="row justify-content-center">
+            <table class="table">
+                <thead class="thead-primary">
+                    <tr class="text-center">
+                        <th>&nbsp;</th>
+                        <th>Product name</th>
+                        <th>Price</th>
+                        <th>Quantity</th>
+                        <th>Total</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @{
+                        var galList = ViewData["cart"] as List<Cart>;
+                    }
+                    @foreach (var item in galList)
+                    {
+                        <tr class="text-center">
+                            <td class="image-prod"><div class="img" style="background-image:url('/Images/@Html.DisplayFor(modelItem => item.Product.ProductImage)');"></div></td>
+
+                            <td class="product-name">
+                                <h3>@Html.DisplayFor(modelItem => item.Product.ProductName)</h3>
+                            </td>
+
+                            <td class="price">@Html.DisplayFor(modelItem => item.Product.Price)</td>
+
+                            <td class="quantity">@Html.DisplayFor(modelItem => item.Quantity)</td>
+
+                            <td class="total">@Html.DisplayFor(modelItem => item.TotalPrice)</td>
+                        </tr>
+                        <!-- END TR-->
+                    }
+                </tbody>
+            </table>
+            <div class="col-xl-7 ftco-animate">
+                <form asp-action="Create" asp-controller="Order" class="billing-form" id="myform">
+                    <h3 class="mb-4 billing-heading">Billing Details</h3>
+
+                    <div class="row align-items-end">
+                        <div class="col-md-12">
+                            <div class="form-group">
+                                <label for="firstname">Full Name</label>
+                                <input asp-for="ReceiverName" class="form-control" value='@HttpContextAccessor.HttpContext.Session.GetString("LoginName")'>
+                                <span asp-validation-for="ReceiverName" class="text-danger"></span>
+                            </div>
+                        </div>
+                        <div class="w-100"></div>
+                        <div class="col-md-12">
+                            <div class="form-group">
+                                <label for="streetaddress">Street Address</label>
+                                <input asp-for="ReceiverAddress" type="text" class="form-control" value='@HttpContextAccessor.HttpContext.Session.GetString("LoginAddress")' placeholder="House number and street name">
+                                <span asp-validation-for="ReceiverAddress" class="text-danger"></span>
+                            </div>
+                        </div>
+                        <div class="w-100"></div>
+                        <div class="col-md-12">
+                            <div class="form-group">
+                                <label for="phone">Phone</label>
+                                <input type="text" asp-for="ReceiverPhone" class="form-control" value='@HttpContextAccessor.HttpContext.Session.GetString("LoginPhone")' placeholder="">
+                                <span asp-validation-for="ReceiverPhone" class="text-danger"></span>
+                            </div>
+                        </div>
+                        <div class="w-100"></div>
+                        <div class="col-md-12">
+                            <div class="form-group">
+                                <label for="towncity">Note</label>
+                                <textarea asp-for="Note" class="form-control" rows="5"></textarea>
+                            </div>
+                        </div>
+
+                        <div class="w-100"></div>
+
+                    </div>
+                </form><!-- END -->
+            </div>
+            <div class="col-xl-5">
+                <div class="row mt-5 pt-3">
+                    <div class="col-md-12 d-flex mb-5">
+                        <div class="cart-detail cart-total p-3 p-md-4">
+                            <h3 class="billing-heading mb-4">Cart Total</h3>
+                            <span>Number Products</span>
+                            <span>@ViewData["Number_Pro"]</span>
+
+                            <hr>
+                            <p class="d-flex total-price">
+                                <span>Total</span>
+                                <span>@ViewData["Total_Cart"]</span>
+                            </p>
+                            <p><button onclick="submitForm()" class="btn btn-primary py-3 px-4">Place an order</button></p>
+
+                        </div>
+                    </div>
+
+                </div>
+            </div> <!-- .col-md-8 -->
+        </div>
+    </div>
+</section> <!-- .section -->
+<script>
+    function submitForm() {
+        document.getElementById('myform').submit();
+    }
+</script>

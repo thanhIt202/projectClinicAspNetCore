@@ -1,0 +1,187 @@
+is_global = true
+build_property.TargetFramework = net6.0
+build_property.TargetPlatformMinVersion = 
+build_property.UsingMicrosoftNETSdkWeb = true
+build_property.ProjectTypeGuids = 
+build_property.InvariantGlobalization = 
+build_property.PlatformNeutralAssembly = 
+build_property.EnforceExtendedAnalyzerRules = 
+build_property._SupportedPlatformList = Linux,macOS,Windows
+build_property.RootNamespace = Project3
+build_property.RootNamespace = Project3
+build_property.ProjectDir = C:\DOAN_VAN_THANH\TotalProject\AspNetCoreSem3\projectClinicAspNetCore\Project3\Project3\
+build_property.EnableComHosting = 
+build_property.EnableGeneratedComInterfaceComImportInterop = 
+build_property.RazorLangVersion = 6.0
+build_property.SupportLocalizedComponentNames = 
+build_property.GenerateRazorMetadataSourceChecksumAttributes = 
+build_property.MSBuildProjectDirectory = C:\DOAN_VAN_THANH\TotalProject\AspNetCoreSem3\projectClinicAspNetCore\Project3\Project3
+build_property._RazorSourceGeneratorDebug = 
+
+[C:/DOAN_VAN_THANH/TotalProject/AspNetCoreSem3/projectClinicAspNetCore/Project3/Project3/Areas/Admin/Views/AccountsAdmin/Details.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcQWNjb3VudHNBZG1pblxEZXRhaWxzLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/DOAN_VAN_THANH/TotalProject/AspNetCoreSem3/projectClinicAspNetCore/Project3/Project3/Areas/Admin/Views/AccountsAdmin/Edit.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcQWNjb3VudHNBZG1pblxFZGl0LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/DOAN_VAN_THANH/TotalProject/AspNetCoreSem3/projectClinicAspNetCore/Project3/Project3/Areas/Admin/Views/AccountsAdmin/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcQWNjb3VudHNBZG1pblxJbmRleC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/DOAN_VAN_THANH/TotalProject/AspNetCoreSem3/projectClinicAspNetCore/Project3/Project3/Areas/Admin/Views/CategoriesAdmin/Create.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcQ2F0ZWdvcmllc0FkbWluXENyZWF0ZS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/DOAN_VAN_THANH/TotalProject/AspNetCoreSem3/projectClinicAspNetCore/Project3/Project3/Areas/Admin/Views/CategoriesAdmin/Details.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcQ2F0ZWdvcmllc0FkbWluXERldGFpbHMuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/DOAN_VAN_THANH/TotalProject/AspNetCoreSem3/projectClinicAspNetCore/Project3/Project3/Areas/Admin/Views/CategoriesAdmin/Edit.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcQ2F0ZWdvcmllc0FkbWluXEVkaXQuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/DOAN_VAN_THANH/TotalProject/AspNetCoreSem3/projectClinicAspNetCore/Project3/Project3/Areas/Admin/Views/CategoriesAdmin/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcQ2F0ZWdvcmllc0FkbWluXEluZGV4LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/DOAN_VAN_THANH/TotalProject/AspNetCoreSem3/projectClinicAspNetCore/Project3/Project3/Areas/Admin/Views/HomeAdmin/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcSG9tZUFkbWluXEluZGV4LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/DOAN_VAN_THANH/TotalProject/AspNetCoreSem3/projectClinicAspNetCore/Project3/Project3/Areas/Admin/Views/NewsAdmin/Create.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcTmV3c0FkbWluXENyZWF0ZS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/DOAN_VAN_THANH/TotalProject/AspNetCoreSem3/projectClinicAspNetCore/Project3/Project3/Areas/Admin/Views/NewsAdmin/Details.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcTmV3c0FkbWluXERldGFpbHMuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/DOAN_VAN_THANH/TotalProject/AspNetCoreSem3/projectClinicAspNetCore/Project3/Project3/Areas/Admin/Views/NewsAdmin/Edit.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcTmV3c0FkbWluXEVkaXQuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/DOAN_VAN_THANH/TotalProject/AspNetCoreSem3/projectClinicAspNetCore/Project3/Project3/Areas/Admin/Views/NewsAdmin/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcTmV3c0FkbWluXEluZGV4LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/DOAN_VAN_THANH/TotalProject/AspNetCoreSem3/projectClinicAspNetCore/Project3/Project3/Areas/Admin/Views/OrderDetailsAdmin/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcT3JkZXJEZXRhaWxzQWRtaW5cSW5kZXguY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/DOAN_VAN_THANH/TotalProject/AspNetCoreSem3/projectClinicAspNetCore/Project3/Project3/Areas/Admin/Views/OrdersAdmin/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcT3JkZXJzQWRtaW5cSW5kZXguY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/DOAN_VAN_THANH/TotalProject/AspNetCoreSem3/projectClinicAspNetCore/Project3/Project3/Areas/Admin/Views/ProductsAdmin/Create.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcUHJvZHVjdHNBZG1pblxDcmVhdGUuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/DOAN_VAN_THANH/TotalProject/AspNetCoreSem3/projectClinicAspNetCore/Project3/Project3/Areas/Admin/Views/ProductsAdmin/Details.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcUHJvZHVjdHNBZG1pblxEZXRhaWxzLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/DOAN_VAN_THANH/TotalProject/AspNetCoreSem3/projectClinicAspNetCore/Project3/Project3/Areas/Admin/Views/ProductsAdmin/Edit.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcUHJvZHVjdHNBZG1pblxFZGl0LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/DOAN_VAN_THANH/TotalProject/AspNetCoreSem3/projectClinicAspNetCore/Project3/Project3/Areas/Admin/Views/ProductsAdmin/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcUHJvZHVjdHNBZG1pblxJbmRleC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/DOAN_VAN_THANH/TotalProject/AspNetCoreSem3/projectClinicAspNetCore/Project3/Project3/Areas/Admin/Views/Shared/Error.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcU2hhcmVkXEVycm9yLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/DOAN_VAN_THANH/TotalProject/AspNetCoreSem3/projectClinicAspNetCore/Project3/Project3/Areas/Admin/Views/Shared/_ValidationScriptsPartial.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcU2hhcmVkXF9WYWxpZGF0aW9uU2NyaXB0c1BhcnRpYWwuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/DOAN_VAN_THANH/TotalProject/AspNetCoreSem3/projectClinicAspNetCore/Project3/Project3/Areas/Admin/Views/_ViewImports.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcX1ZpZXdJbXBvcnRzLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/DOAN_VAN_THANH/TotalProject/AspNetCoreSem3/projectClinicAspNetCore/Project3/Project3/Areas/Admin/Views/_ViewStart.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcX1ZpZXdTdGFydC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/DOAN_VAN_THANH/TotalProject/AspNetCoreSem3/projectClinicAspNetCore/Project3/Project3/Views/Blog/Details.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQmxvZ1xEZXRhaWxzLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/DOAN_VAN_THANH/TotalProject/AspNetCoreSem3/projectClinicAspNetCore/Project3/Project3/Views/Blog/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQmxvZ1xJbmRleC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/DOAN_VAN_THANH/TotalProject/AspNetCoreSem3/projectClinicAspNetCore/Project3/Project3/Views/Cart/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ2FydFxJbmRleC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/DOAN_VAN_THANH/TotalProject/AspNetCoreSem3/projectClinicAspNetCore/Project3/Project3/Views/Home/About.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxBYm91dC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/DOAN_VAN_THANH/TotalProject/AspNetCoreSem3/projectClinicAspNetCore/Project3/Project3/Views/Home/Contact.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxDb250YWN0LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/DOAN_VAN_THANH/TotalProject/AspNetCoreSem3/projectClinicAspNetCore/Project3/Project3/Views/Home/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxJbmRleC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/DOAN_VAN_THANH/TotalProject/AspNetCoreSem3/projectClinicAspNetCore/Project3/Project3/Views/Login/Account.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTG9naW5cQWNjb3VudC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/DOAN_VAN_THANH/TotalProject/AspNetCoreSem3/projectClinicAspNetCore/Project3/Project3/Views/Login/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTG9naW5cSW5kZXguY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/DOAN_VAN_THANH/TotalProject/AspNetCoreSem3/projectClinicAspNetCore/Project3/Project3/Views/Login/Register.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTG9naW5cUmVnaXN0ZXIuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/DOAN_VAN_THANH/TotalProject/AspNetCoreSem3/projectClinicAspNetCore/Project3/Project3/Views/OrderDetails/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcT3JkZXJEZXRhaWxzXEluZGV4LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/DOAN_VAN_THANH/TotalProject/AspNetCoreSem3/projectClinicAspNetCore/Project3/Project3/Views/Order/Create.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcT3JkZXJcQ3JlYXRlLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/DOAN_VAN_THANH/TotalProject/AspNetCoreSem3/projectClinicAspNetCore/Project3/Project3/Views/Order/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcT3JkZXJcSW5kZXguY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/DOAN_VAN_THANH/TotalProject/AspNetCoreSem3/projectClinicAspNetCore/Project3/Project3/Views/Product/Details.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUHJvZHVjdFxEZXRhaWxzLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/DOAN_VAN_THANH/TotalProject/AspNetCoreSem3/projectClinicAspNetCore/Project3/Project3/Views/Product/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUHJvZHVjdFxJbmRleC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/DOAN_VAN_THANH/TotalProject/AspNetCoreSem3/projectClinicAspNetCore/Project3/Project3/Views/Shared/Error.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXEVycm9yLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/DOAN_VAN_THANH/TotalProject/AspNetCoreSem3/projectClinicAspNetCore/Project3/Project3/Views/Shared/_ValidationScriptsPartial.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9WYWxpZGF0aW9uU2NyaXB0c1BhcnRpYWwuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/DOAN_VAN_THANH/TotalProject/AspNetCoreSem3/projectClinicAspNetCore/Project3/Project3/Views/_ViewImports.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcX1ZpZXdJbXBvcnRzLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/DOAN_VAN_THANH/TotalProject/AspNetCoreSem3/projectClinicAspNetCore/Project3/Project3/Views/_ViewStart.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcX1ZpZXdTdGFydC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/DOAN_VAN_THANH/TotalProject/AspNetCoreSem3/projectClinicAspNetCore/Project3/Project3/Areas/Admin/Views/Shared/_LayoutAdmin.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcU2hhcmVkXF9MYXlvdXRBZG1pbi5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = b-f8zfvk1fya
+
+[C:/DOAN_VAN_THANH/TotalProject/AspNetCoreSem3/projectClinicAspNetCore/Project3/Project3/Views/Shared/_LayoutUser.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9MYXlvdXRVc2VyLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = b-4g294kz5tr

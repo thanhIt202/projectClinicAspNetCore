@@ -1,0 +1,77 @@
+﻿@model X.PagedList.IPagedList<Project3.Models.Comment>
+@using X.PagedList.Mvc.Core;
+@using Microsoft.AspNetCore.Http
+@inject Microsoft.AspNetCore.Http.IHttpContextAccessor HttpContextAccessor
+
+@{
+    ViewData["Title"] = "Blog Details";
+}
+
+<div class="hero-wrap hero-bread" style="background-image: url('/Images/@ViewData["ne_Image"]');">
+    <div class="container">
+        <div class="row no-gutters slider-text align-items-center justify-content-center">
+            <div class="col-md-9 ftco-animate text-center">
+                <p class="breadcrumbs"><span class="mr-2"><a href="#">Home</a></span> <span>Blog</span> <span>Blog Details</span></p>
+                <h1 class="mb-0 bread">Blog Details</h1>
+            </div>
+        </div>
+    </div>
+</div>
+<section class="ftco-section ftco-degree-bg">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12 ftco-animate">
+                <h2 class="mb-3">@ViewData["ne_title"]</h2>
+                <p>@ViewData["ne_ShortContent"]</p>
+                <img src="~/Images/@ViewData["ne_Image"]" class="img-fluid" width="100%" />
+                @Html.Raw(@ViewData["ne_LongContent"])
+                <form asp-action="Create">
+                    <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                    <div class="form-group my-3">
+                        <input name="Content" class="form-control" />
+                    </div>
+                    <input type="hidden" name="CommentDate" value="@DateTime.Today.ToString("yyyy-MM-dd")" />
+                    <input type="hidden" name="NewsId" value="@ViewData["ne_id"]" />
+                    <input type="hidden" name="AccountId" value="@HttpContextAccessor.HttpContext.Session.GetInt32("LoginId")" />
+                    @if (@HttpContextAccessor.HttpContext.Session.GetInt32("LoginId") == null)
+                    {
+                        <a asp-action="Index" asp-controller="Login" class="btn btn-primary">Create</a>
+                    }
+                    else
+                    {
+                        <div class="form-group">
+                            <input type="submit" value="Create" class="btn btn-primary" />
+                        </div>
+                    }
+                </form>
+                <div class="pt-5 mt-5">
+                    <h3 class="mb-5">Comments</h3>
+                    <ul class="comment-list">
+                        @foreach (var item in Model)
+                        {
+                            <li class="comment">
+                                <div class="vcard bio">
+                                    <img src="~/Images/@item.Account.Avatar" alt="Image placeholder">
+                                </div>
+                                <div class="comment-body">
+                                    <h3>@Html.DisplayFor(modelItem => item.Account.FullName)</h3>
+                                    <div class="meta"><b>@Html.DisplayFor(modelItem => item.CommentDate)</b></div>
+                                    <p>@Html.DisplayFor(modelItem => item.Content)</p>
+                                    @if (@HttpContextAccessor.HttpContext.Session.GetInt32("LoginId") == item.AccountId)
+                                    {
+                                        <p><a asp-action="Delete" asp-route-id="@item.CommentId" class="reply">Delete</a></p>
+                                    }
+                                </div>
+                            </li>
+                        }
+                    </ul>
+                </div>
+            </div>
+            @Html.PagedListPager(Model, page => Url.Action("Index", new { page = page }), new X.PagedList.Web.Common.PagedListRenderOptions()
+       {
+           LiElementClasses = new List<String> { "page-item" },
+           PageClasses = new List<String> { "page-link" }
+       })
+        </div>
+    </div>
+</section>

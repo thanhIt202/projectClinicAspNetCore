@@ -1,0 +1,77 @@
+﻿@model IEnumerable<Project3.Models.Orders>
+@* @model X.PagedList.IPagedList<Project3.Models.Orders>
+@using X.PagedList.Mvc.Core; *@
+@using Microsoft.AspNetCore.Http
+@inject Microsoft.AspNetCore.Http.IHttpContextAccessor HttpContextAccessor
+
+@{
+    ViewData["Title"] = "My Order";
+}
+
+<div class="hero-wrap hero-bread" style="background-image: url('/StyleUser/images/cart1.jpg');">
+    <div class="container">
+        <div class="row no-gutters slider-text align-items-center justify-content-center">
+            <div class="col-md-9 ftco-animate text-center">
+                <p class="breadcrumbs"><span class="mr-2"><a href="#">Home</a></span> <span>Order</span></p>
+                <h1 class="mb-0 bread">My Order</h1>
+            </div>
+        </div>
+    </div>
+</div>
+<section class="ftco-section ftco-cart">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12 ftco-animate">
+                <div class="cart-list">
+                    <table class="table">
+
+                        <thead class="thead-primary">
+                            <tr class="text-center">
+                                <th>Receiver Name</th>
+                                <th> Phone</th>
+                                <th>Address</th>
+                                <th>Note</th>
+                                <th>Status</th>
+                                <th>&nbsp;</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+
+                            @foreach (var item in Model)
+                            {
+                                @if (HttpContextAccessor.HttpContext.Session.GetInt32("LoginId") == item.AccountId)
+                                {
+                                    <tr class="text-center">
+                                        <td class="price">
+                                            <h3>@Html.DisplayFor(modelItem => item.ReceiverName)</h3>
+                                        </td>
+                                        <td class="price">@Html.DisplayFor(modelItem => item.ReceiverPhone)</td>
+                                        <td class="product-name">@Html.DisplayFor(modelItem => item.ReceiverAddress)</td>
+                                        @if (item.Note == null || item.Note == "")
+                                        {
+                                            <td class="total">Not Note</td>
+
+                                        }
+                                        else
+                                        {
+                                            <td class="total">@Html.DisplayFor(modelItem => item.Note)</td>
+
+                                        }
+                                        <td class="total">@Html.DisplayFor(modelItem => item.OrderStatus)</td>
+                                        <td> <a asp-action="Index" asp-controller="OrderDetails" asp-route-id="@item.OrdersId" class="btn btn-primary"> Details</a> </td>
+                                    </tr>
+
+                                    <!-- END TR-->
+                                }
+                            }
+                        </tbody>
+
+                    </table>
+                </div>
+                <br />
+
+            </div>
+        </div>
+    </div>
+
+</section>

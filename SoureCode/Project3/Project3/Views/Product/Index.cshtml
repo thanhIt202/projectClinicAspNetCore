@@ -1,0 +1,116 @@
+﻿@model X.PagedList.IPagedList<Project3.Models.Product>
+@using X.PagedList.Mvc.Core;
+
+@{
+    ViewData["Title"] = "Product Index";
+}
+
+<div class="hero-wrap hero-bread" style="background-image: url('/StyleUser/images/pro1.jpg');">
+    <div class="container">
+        <div class="row no-gutters slider-text align-items-center justify-content-center">
+            <div class="col-md-9 ftco-animate text-center">
+                <p class="breadcrumbs"><span class="mr-2"><a href="index.html">Home</a></span> <span>Products</span></p>
+                <h1 class="mb-0 bread">Products</h1>
+            </div>
+        </div>
+    </div>
+</div>
+<section class="ftco-section">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-6 ">
+                <ul class="product-category">
+                    <li><a asp-route-id="All" asp-action="Index" class="@TempData["active"]">All</a></li>
+                    @foreach (var item in Model)
+                    {
+                        <p>@Html.DisplayFor(modelItem => item.Category.CategoryType)</p>
+                       @*  <li><a asp-route-id="@item.Category.CategoryType" asp-action="Index" class="@TempData["active1"]">@Html.DisplayFor(modelItem => item.Category.CategoryType)</a></li> *@
+                        @* <li><a asp-route-id="Science" asp-action="Index" class="@TempData["active2"]">Science</a></li> *@
+                    }
+                </ul>
+            </div>
+            <div class="col-md-6" style="margin-bottom:20px !important">
+                <form action="#">
+                    <div class="input-group">
+                        <input type="search" name="name" class="form-control form-control-lg" placeholder="Enter a name to search...">
+                        <div class="input-group-append">
+                            <button type="submit" class="btn btn-lg btn-default">
+                                <i class="fa fa-search"></i>
+                            </button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+        <div class="row">
+            @foreach (var item in Model)
+            {
+                <div class="col-md-6 col-lg-3 ftco-animate">
+                    <div class="product">
+                        <a asp-action="Details" asp-route-id="@item.ProductId" class=" d-flex" style="overflow:hidden !important ; height : 300px !important">
+                            <img class="img-fluid" src="~/Images/@item.ProductImage" alt="Colorlib Template">
+                            @* <span class="status">30%</span> *@
+                            <div class="overlay"></div>
+                        </a>
+                        <div class="text py-3 pb-4 px-3 text-center">
+                            <h3><a asp-action="Details" asp-route-id="@item.ProductId">@Html.DisplayFor(modelItem => item.ProductName)</a></h3>
+                            <div class="d-flex">
+                                <div class="pricing">
+                                    @* <p class="price"><span class="mr-2 price-dc">$120.00</span><span class="price-sale">$80.00</span></p> *@
+                                    <p class="price"><span class="price-sale">@Html.DisplayFor(modelItem => item.Price)</span></p>
+                                </div>
+                            </div>
+                            <div class="bottom-area d-flex px-3">
+                                <div class="m-auto d-flex">
+                                    <a asp-action="Details" asp-route-id="@item.ProductId" class="add-to-cart d-flex justify-content-center align-items-center text-center">
+                                        <span><i class="ion-ios-menu"></i></span>
+                                    </a>
+
+                                    @if (item.ProductStatus == "In stock")
+                                    {
+                                        <a asp-action="Details" asp-route-id="@item.ProductId" class="buy-now d-flex justify-content-center align-items-center ml-2">
+                                            <span><i class="ion-ios-cart"></i></span>
+                                        </a>
+                                    }
+                                    else
+                                    {
+                                        <a class="buy-now d-flex justify-content-center align-items-center ml-2 " style=" background-color:red">
+                                            <span><i class="ion-ios-cart"></i></span>
+                                        </a>
+                                    }
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            }
+        </div>
+        <div class="row mt-5">
+            <div class="col text-center">
+                @Html.PagedListPager(Model, page => Url.Action("Index", new { page = page }), new X.PagedList.Web.Common.PagedListRenderOptions()
+           {
+               LiElementClasses = new List<String> { "page-item" },
+               PageClasses = new List<String> { "page-link" }
+           })
+            </div>
+        </div>
+    </div>
+</section>
+<section class="ftco-section ftco-no-pt ftco-no-pb py-5 bg-light">
+    <div class="container py-4">
+        <div class="row d-flex justify-content-center py-5">
+            <div class="col-md-6">
+                <h2 style="font-size: 22px;" class="mb-0">Subcribe to our Newsletter</h2>
+                <span>Get e-mail updates about our latest shops and special offers</span>
+            </div>
+            <div class="col-md-6 d-flex align-items-center">
+                <form action="#" class="subscribe-form">
+                    <div class="form-group d-flex">
+                        <input type="text" class="form-control" placeholder="Enter email address">
+                        <input type="submit" value="Subscribe" class="submit px-3">
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</section>

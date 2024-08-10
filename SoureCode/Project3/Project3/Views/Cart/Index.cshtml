@@ -1,0 +1,113 @@
+﻿@model IEnumerable<Project3.Models.Cart>
+@using Microsoft.AspNetCore.Http
+@inject Microsoft.AspNetCore.Http.IHttpContextAccessor HttpContextAccessor
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<div class="hero-wrap hero-bread" style="background-image: url('/StyleUser/images/cart1.jpg');">
+    <div class="container">
+        <div class="row no-gutters slider-text align-items-center justify-content-center">
+            <div class="col-md-9 ftco-animate text-center">
+                <p class="breadcrumbs"><span class="mr-2"><a href="#">Home</a></span> <span>Cart</span></p>
+                <h1 class="mb-0 bread">My Cart</h1>
+            </div>
+        </div>
+    </div>
+</div>
+<section class="ftco-section ftco-cart">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12 ftco-animate">
+                <div class="cart-list">
+                    <table class="table">
+                        @if (TempData["cart"] != "")
+                        {
+                            <div class="alert alert-success" role="alert">
+
+                                Your shopping cart is empty <a asp-controller="Product" asp-route-id="All" asp-action="Index" class="alert-link">click here</a> to purchase
+                            </div>
+                        }
+                        else
+                        {
+                            <thead class="thead-primary">
+                                <tr class="text-center">
+                                    <th>&nbsp;</th>
+                                    <th>&nbsp;</th>
+                                    <th>Product name</th>
+                                    <th>Price</th>
+                                    <th>Quantity</th>
+                                    <th>Total</th>
+                                    <th>&nbsp;</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                @foreach (var item in Model)
+                                {
+                                    @if (HttpContextAccessor.HttpContext.Session.GetInt32("LoginId") == item.AccountId)
+                                    {
+                                        <form asp-action="Edit" asp-controller="Cart" method="post">
+                                            <input type="hidden" name="CartId" value="@item.CartId" />
+                                        <tr class="text-center">
+                                            <td class="product-remove"><a asp-action="Delete" asp-route-id="@item.CartId"><span class="ion-ios-close"></span></a></td>
+                                            <td class="image-prod"><div class="img" style="background-image:url('/Images/@Html.DisplayFor(modelItem => item.Product.ProductImage)');"></div></td>
+                                            <td class="product-name">
+                                                <h3>@Html.DisplayFor(modelItem => item.Product.ProductName)</h3>
+                                                    @* <p>Far far away, behind the word mountains, far from the countries</p> *@
+                                            </td>
+                                            <td class="price">@Html.DisplayFor(modelItem => item.Product.Price)</td>
+                                            <td class="quantity">
+                                                <div class="input-group mb-3">
+                                                    <input type="text" name="quantity" class="quantity form-control input-number" value="@Html.DisplayFor(modelItem => item.Quantity)" min="1" max="100">
+                                                </div>
+                                            </td>
+                                            <td class="total">@Html.DisplayFor(modelItem => item.TotalPrice)</td>
+                                                @* <td class="total">@(item.Quantity * item.Product.Price) $</td> *@
+                                            <input type="hidden" name="TotalPrice" value='@item.Product.Price' />
+                                            <input type="hidden" name="ProductId" value="@item.ProductId" />
+                                            <input type="hidden" name="AccountId" value="@item.AccountId" />
+                                            <td> <input type="submit" value="Save" class="btn btn-primary" /></td>
+                                        </tr>
+                                        </form>
+                                        <!-- END TR-->
+                                    }
+                                }
+                            </tbody>
+                        }
+                    </table>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-lg-4 mt-5 cart-wrap ftco-animate">
+                <p><a asp-action="Index" asp-controller="Order" class="btn btn-info py-3 px-4">Your Orders</a></p>
+            </div>
+            <div class="col-lg-4 mt-5 cart-wrap ftco-animate">
+                <p></p>
+            </div>
+            <div class="col-lg-4 mt-5 cart-wrap ftco-animate">
+                @if (TempData["cart"] != "")
+                {
+
+                }
+                else
+                {
+                    <div class="cart-total mb-3">
+                        <h3>Cart Totals</h3>
+                        <p class="d-flex">
+                            <span>Number Products</span>
+                            <span>@ViewData["Number_Pro"]</span>
+                        </p>
+                        <hr>
+                        <p class="d-flex total-price">
+                            <span>Total</span>
+                            <span>@ViewData["Total_Cart"]</span>
+                        </p>
+                    </div>
+                    <p><a asp-action="Create" asp-controller="Order" class="btn btn-primary py-3 px-4">Proceed to Checkout</a></p>
+                }
+            </div>
+        </div>
+    </div>
+</section>

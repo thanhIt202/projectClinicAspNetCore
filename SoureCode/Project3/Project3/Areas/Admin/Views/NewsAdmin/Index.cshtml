@@ -1,0 +1,84 @@
+﻿@model X.PagedList.IPagedList<Project3.Models.News>
+@using X.PagedList.Mvc.Core;
+
+@{
+    ViewData["Title"] = "News list Page";
+}
+
+<div class="row mb-2">
+    <div class="col-sm-6">
+        <h1 class="m-0">News list</h1>
+    </div>
+    <div class="col-sm-6">
+        <ol class="breadcrumb float-sm-right">
+            <li class="breadcrumb-item"><a asp-area="Admin" asp-controller="HomeAdmin" asp-action="Index">Home Admin</a></li>
+            <li class="breadcrumb-item"><a asp-area="Admin" asp-controller="NewsAdmin" asp-action="Index">News management</a></li>
+            <li class="breadcrumb-item active">News list</li>
+        </ol>
+    </div>
+</div>
+<hr />
+<a asp-action="Create" class="btn btn-primary pt-2"><i class="fas fa-plus"></i> Create</a>
+<h5 class="my-3">
+    <b class="text-success">@TempData["Message"]</b>
+    <b class="text-danger">@TempData["MessageError"]</b>
+</h5>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.FirstOrDefault().Title)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.FirstOrDefault().ShortContent)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.FirstOrDefault().LongContent)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.FirstOrDefault().NewsDate)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.FirstOrDefault().NewsImage)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.FirstOrDefault().NewsType)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Title)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.ShortContent)
+                </td>
+                <td>
+                    @Html.Raw(item.LongContent)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.NewsDate)
+                </td>
+                <td>
+                    <img src="~/Images/@item.NewsImage" width="100%" height="50" />
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.NewsType)
+                </td>
+                <td>
+                    <a asp-action="Edit" asp-route-id="@item.NewsId">Edit</a>
+                    <a asp-action="Details" asp-route-id="@item.NewsId">Details</a>
+                    <a asp-action="Delete" asp-route-id="@item.NewsId">Delete</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
+@Html.PagedListPager(Model, page => Url.Action("Index", new {page = page}), new X.PagedList.Web.Common.PagedListRenderOptions(){
+LiElementClasses = new List<String> {"page-item"},
+PageClasses = new List<String> {"page-link"}
+})

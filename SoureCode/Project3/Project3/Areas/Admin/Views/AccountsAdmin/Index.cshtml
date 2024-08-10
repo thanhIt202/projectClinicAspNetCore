@@ -1,0 +1,111 @@
+﻿@model X.PagedList.IPagedList<Project3.Models.Account>
+@using X.PagedList.Mvc.Core;
+
+@{
+    ViewData["Title"] = "Account list Page";
+}
+
+<div class="row mb-2">
+    <div class="col-sm-6">
+        <h1 class="m-0">Account list</h1>
+    </div>
+    <div class="col-sm-6">
+        <ol class="breadcrumb float-sm-right">
+            <li class="breadcrumb-item"><a asp-area="Admin" asp-controller="HomeAdmin" asp-action="Index">Home Admin</a></li>
+            <li class="breadcrumb-item"><a asp-area="Admin" asp-controller="AccountsAdmin" asp-action="Index">Account management</a></li>
+            <li class="breadcrumb-item active">Account list</li>
+        </ol>
+    </div>
+</div>
+<hr />
+<div class="row">
+    <div class="col-md-8 offset-md-2">
+        <form action="#">
+            <div class="input-group">
+                <input type="search" name="name" class="form-control form-control-lg" placeholder="Enter a name to search...">
+                <div class="input-group-append">
+                    <button type="submit" class="btn btn-lg btn-default">
+                        <i class="fa fa-search"></i>
+                    </button>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>
+<h5 class="my-3">
+    <b class="text-success">@TempData["Message"]</b>
+    <b class="text-danger">@TempData["MessageError"]</b>
+</h5>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.FirstOrDefault().FullName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.FirstOrDefault().Email)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.FirstOrDefault().Password)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.FirstOrDefault().Phone)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.FirstOrDefault().Address)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.FirstOrDefault().Avatar)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.FirstOrDefault().AccountStatus)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.FirstOrDefault().AccountType)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.FullName)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Email)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Password)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Phone)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Address)
+                </td>
+                <td>
+                    <img src="~/Images/@item.Avatar" width="50" />
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.AccountStatus)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.AccountType)
+                </td>
+                <td>
+                    @if (item.AccountType == "user")
+                    {
+                        <a asp-action="Edit" asp-route-id="@item.AccountId">Edit</a>
+                    }
+                    <a asp-action="Details" asp-route-id="@item.AccountId">Details</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
+@Html.PagedListPager(Model, page => Url.Action("Index", new {page = page}), new X.PagedList.Web.Common.PagedListRenderOptions(){
+LiElementClasses = new List<String> {"page-item"},
+PageClasses = new List<String> {"page-link"}
+})
